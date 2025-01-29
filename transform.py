@@ -7,7 +7,7 @@ from pyspark.sql.functions import col, sum as spark_sum
 spark = SparkSession.builder.appName("ETL Job AWS Glue").getOrCreate()
 
 # Carregar dados de um CSV armazenado no S3
-s3_path = "s3://seu-bucket/vendas.csv"
+s3_path = "s3://bucket-teste/vendas.csv"
 df = spark.read.csv(s3_path, header=True, sep=';', inferSchema=True)
 
 # Mostrar dados carregados
